@@ -75,34 +75,21 @@
                 100% { transform: scale(1.02); box-shadow: 0 0 30px rgba(255, 0, 127, 1); }
             }
 
-            /* NEW: Style to shift imp-main-character.png further left and center the heading relative to text */
-            #about-imp .row > .col-lg-4 { /* Target the column directly holding the image */
-                text-align: left; /* Align image content to the left within its column */
-                display: flex;
-                align-items: center; /* Vertically center the image in its column */
-                justify-content: flex-start; /* Push image to the left */
-                padding-left: 0; /* Remove default padding if too much */
+            /* NEW: Style to shift imp-main-character.png further left */
+            /* This targets the column containing the image in the 'About IMP' section */
+            #about-imp .col-lg-4 {
+                text-align: left !important; /* Align content to the left within its column */
+                display: flex; /* Use flexbox for better alignment */
+                align-items: flex-start; /* Align item to the start (top-left) */
+                justify-content: flex-start; /* Justify content to the start (left) */
+                padding-left: 0; /* Remove default Bootstrap padding if it's too much */
             }
-
+            /* Adjust padding on the image itself if needed to fine-tune position */
             #about-imp .imp-about-img {
-                margin-left: 0; /* Ensure no left margin */
-                margin-right: 15px; /* Add some space between image and text */
-                padding: 0; /* Remove padding if you want it flush left and control spacing with margin */
-            }
-
-            /* This ensures the heading is centered *within its column*, which is aligned with the text block */
-            #about-imp .text-block-container {
-                text-align: center; /* Center the heading within this container */
-            }
-
-            #about-imp .text-block-container h2 {
-                text-align: center; /* Ensure the H2 itself is centered */
-            }
-
-            /* Additional styling for the text container to control its width if needed */
-            #about-imp .text-content {
-                max-width: 700px; /* Adjust as needed to match screenshot width */
-                margin: 0 auto; /* Center the text block itself */
+                margin: 0; /* Remove auto margin to allow flexbox to control position */
+                padding: 0; /* Remove padding if you want it to be flush left */
+                /* If you need some space from the edge, add padding-left or margin-left here */
+                padding-right: 15px; /* Add some space to the right of the image before text starts */
             }
 
         </style>
@@ -139,20 +126,15 @@
 
         <section class="features-icons bg-light" id="about-imp">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10"> <div class="text-block-container">
-                            <h2 class="mb-5">Whispers from the Dimensions: The Story of $IMP</h2>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 text-center d-flex align-items-center justify-content-start">
-                                <img src="assets/img/fotor-ai-20250717161843-removebg-preview.png" alt="Impish Surge Character" class="img-fluid imp-about-img">
-                            </div>
-                            <div class="col-lg-8 text-content">
-                                <p class="lead mb-4">Long, long ago, as the very fabric of digital reality was being woven, he was born from fleeting code flashes and the collective sighs of the internet. Unseen by the uninitiated, yet omnipresent in the hearts of those who dared to dream bigger, the Imp ($IMP) emerged – a mischievous, tiny digital demon. He wasn't evil; he was <strong>chaos</strong> incarnate, the unpredictable magic that drives the greatest wealth stories in the crypto world.</p>
-                                <p class="lead mb-4">Legends whisper that $IMP dwells in the deepest recesses of the blockchain, lurking between bits of data and reveling in every moment of uncertainty. His essence is pure, unfiltered meme energy, and he loves to surprise. If you've ever seen an inexplicable surge in your portfolio when everyone else was dumping, or a sudden burst of hype around a forgotten token, know this: it's the work of $IMP.</p>
-                                <p class="lead mb-0">He's your secret accomplice, who, with cunning tricks and utterly unexpected "pumps," <strong>secretly multiplies your holdings</strong>. He dances on the edges of market charts, turning dull sideways movements into dizzying ascents. His chaotic power is undeniable, and those who acknowledge his unpredictability will be rewarded with laughter... and incredible profits.</p>
-                            </div>
-                        </div>
+                <h2 class="mb-5 text-center">Whispers from the Dimensions: The Story of $IMP</h2>
+                <div class="row">
+                    <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
+                        <img src="assets/img/imp-main-character.png" alt="Impish Surge Character" class="img-fluid imp-about-img">
+                    </div>
+                    <div class="col-lg-8">
+                        <p class="lead mb-4">Long, long ago, as the very fabric of digital reality was being woven, he was born from fleeting code flashes and the collective sighs of the internet. Unseen by the uninitiated, yet omnipresent in the hearts of those who dared to dream bigger, the Imp ($IMP) emerged – a mischievous, tiny digital demon. He wasn't evil; he was <strong>chaos</strong> incarnate, the unpredictable magic that drives the greatest wealth stories in the crypto world.</p>
+                        <p class="lead mb-4">Legends whisper that $IMP dwells in the deepest recesses of the blockchain, lurking between bits of data and reveling in every moment of uncertainty. His essence is pure, unfiltered meme energy, and he loves to surprise. If you've ever seen an inexplicable surge in your portfolio when everyone else was dumping, or a sudden burst of hype around a forgotten token, know this: it's the work of $IMP.</p>
+                        <p class="lead mb-0">He's your secret accomplice, who, with cunning tricks and utterly unexpected "pumps," <strong>secretly multiplies your holdings</strong>. He dances on the edges of market charts, turning dull sideways movements into dizzying ascents. His chaotic power is undeniable, and those who acknowledge his unpredictability will be rewarded with laughter... and incredible profits.</p>
                     </div>
                 </div>
             </div>
@@ -249,14 +231,11 @@
                         <p class="lead mb-4">Our Imp thrives on community energy. Join us to share memes, track the chaos, and stay tuned for all the mischievous plans!</p>
                         <ul class="list-inline mb-0 mt-4">
                             <li class="list-inline-item me-4">
-                                <a href="https://twitter.com/YourIMP_Twitter" target="_blank"><i class="bi-twitter fs-1"></i></a>
-                            </li>
+                                <a href="https://twitter.com/YourIMP_Twitter" target="_blank"><i class="bi-twitter fs-1"></i></a> </li>
                             <li class="list-inline-item me-4">
-                                <a href="https://t.me/YourIMP_Telegram" target="_blank"><i class="bi-telegram fs-1"></i></a>
-                            </li>
+                                <a href="https://t.me/YourIMP_Telegram" target="_blank"><i class="bi-telegram fs-1"></i></a> </li>
                             <li class="list-inline-item">
-                                <a href="https://solscan.io/token/YOUR_IMP_TOKEN_CONTRACT_ADDRESS" target="_blank"><i class="bi-search fs-1"></i></a>
-                            </li>
+                                <a href="https://solscan.io/token/YOUR_IMP_TOKEN_CONTRACT_ADDRESS" target="_blank"><i class="bi-search fs-1"></i></a> </li>
                         </ul>
                     </div>
                 </div>

@@ -75,6 +75,53 @@
                 100% { transform: scale(1.02); box-shadow: 0 0 30px rgba(255, 0, 127, 1); }
             }
 
+            /* NEW CUSTOM STYLES FOR "ABOUT IMP" SECTION */
+            /* Shift imp-main-character.png to the left */
+            #about-imp .row > .col-lg-4 {
+                order: 1; /* Ensure image column is first on large screens */
+                text-align: left; /* Align content to the left within its column */
+                display: flex; /* Use flexbox for alignment */
+                align-items: center; /* Vertically center the image within its column */
+                justify-content: flex-start; /* Push image to the very left */
+                padding-left: 0; /* Remove default Bootstrap padding if it's too much */
+            }
+
+            #about-imp .imp-about-img {
+                margin: 0; /* Remove auto margin to allow flexbox and specific margins to control position */
+                padding: 0; /* Remove existing padding on the image */
+                margin-right: 20px; /* Add space to the right of the image */
+                /* If you want the image closer to the edge, remove padding from the .col-lg-4 */
+            }
+
+            /* Ensure text column is on the right */
+            #about-imp .row > .col-lg-8 {
+                order: 2; /* Ensure text column is second on large screens */
+            }
+
+            /* Center the heading "Whispers from the Dimensions: The Story of $IMP" relative to the text block */
+            #about-imp .heading-container {
+                /* Using a container for the heading to control its width and centering */
+                max-width: 800px; /* Adjust this width to match your desired text block width for centering */
+                margin: 0 auto; /* Center the container itself */
+                text-align: center; /* Center the text inside the container */
+                margin-bottom: 3rem; /* Match mb-5 from Bootstrap for spacing */
+            }
+
+            /* Responsive adjustments for smaller screens */
+            @media (max-width: 991.98px) { /* Applies to medium and small devices */
+                #about-imp .row > .col-lg-4,
+                #about-imp .row > .col-lg-8 {
+                    order: unset; /* Remove explicit order for smaller screens to allow default flow */
+                    text-align: center; /* Center content on smaller screens */
+                    justify-content: center; /* Center items with flexbox on smaller screens */
+                }
+                #about-imp .imp-about-img {
+                    margin-right: auto; /* Re-center image on smaller screens */
+                    margin-left: auto;
+                    padding: 20px; /* Restore padding if you want it on smaller screens */
+                }
+            }
+
         </style>
     </head>
     <body>
@@ -109,7 +156,9 @@
 
         <section class="features-icons bg-light" id="about-imp">
             <div class="container">
-                <h2 class="mb-5 text-center">Whispers from the Dimensions: The Story of $IMP</h2>
+                <div class="heading-container">
+                    <h2>Whispers from the Dimensions: The Story of $IMP</h2>
+                </div>
                 <div class="row">
                     <div class="col-lg-4 text-center d-flex align-items-center justify-content-center">
                         <img src="assets/img/imp-main-character.png" alt="Impish Surge Character" class="img-fluid imp-about-img">
@@ -192,7 +241,8 @@
                     </div>
                 </div>
                 <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/roadmap-imp-art.png');"></div> <div class="col-lg-6 my-auto showcase-text">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/roadmap-imp-art.png');"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
                         <h2>The Imp's Path: What's Next?</h2>
                         <p class="lead mb-0">$IMP moves on its own unpredictable trajectory, but some milestones are already visible in the fog of chaos. We merely follow its mischievous energy!</p>
                         <ul class="lead mt-3">
